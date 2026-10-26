@@ -39,10 +39,10 @@ window.SITE = {
     { id: 'body', name: 'Мойка кузова', description: 'Мойка кузова снаружи.', price: 'от 900 ₽', duration: null, category: 'Мойка' },
     { id: 'contactless', name: 'Бесконтактная мойка', description: 'Кузов моют пеной и водой, щётки краски не касаются.', price: '', duration: null, category: 'Мойка' },
     { id: 'engine', name: 'Мойка двигателя', description: 'Аккуратно очистим подкапотное пространство от грязи.', price: '', duration: null, category: 'Мойка' },
-    { id: 'rinse', name: 'Облив', description: 'Быстрое ополаскивание кузова. Для легковых и паркетников 300 ₽.', price: '300 ₽', duration: null, category: 'Мойка' },
+    { id: 'rinse', name: 'Облив', description: 'Быстрое ополаскивание кузова. Для легковых и паркетников 300 ₽.', price: 'от 300 ₽', duration: null, category: 'Мойка' },
     { id: 'interior', name: 'Химчистка салона', description: 'Чистка салона автомобиля внутри.', price: '', duration: null, category: 'Салон и кузов' },
     { id: 'polish', name: 'Полировка кузова', description: 'Вернём кузову гладкость и блеск после зимы и дорог.', price: '', duration: null, category: 'Салон и кузов' },
-    { id: 'quartz', name: 'Кварцевое покрытие', description: 'Легковые 1300 ₽, паркетники 1500 ₽, внедорожники 1700 ₽.', price: '1300 ₽', duration: null, category: 'Салон и кузов' },
+    { id: 'quartz', name: 'Кварцевое покрытие', description: 'Легковые 1300 ₽, паркетники 1500 ₽, внедорожники 1700 ₽.', price: 'от 1300 ₽', duration: null, category: 'Салон и кузов' },
   ],
 
   advantages: [
