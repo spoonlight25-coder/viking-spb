@@ -1,0 +1,4 @@
+.env
+server/.env
+clients/*/bookings.json
+__pycache__/

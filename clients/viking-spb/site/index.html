@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <meta name="description" content="">
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script src="config.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a class="logo" href="#top">
+        <img class="logo__img" id="logo-img" alt="" hidden>
+        <span class="logo__text">
+          <span class="logo__name" data-text="name"></span>
+          <span class="logo__tag" data-text="tagline"></span>
+        </span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Разделы сайта"></nav>
+      <a class="header__phone" data-phone>
+        <span data-icon="phone"></span>
+        <span class="header__phone-text" data-text="phone"></span>
+      </a>
+      <a class="btn btn--ghost btn--sm header__cta" href="#booking" data-text="texts.headerButton"></a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" id="hero">
+      <div class="hero__bg" id="hero-bg"></div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="eyebrow" data-text="hero.eyebrow"></p>
+          <h1 class="hero__title">
+            <span data-text="hero.title"></span>
+            <span class="accent" data-text="hero.titleAccent"></span>
+          </h1>
+          <p class="hero__text" data-text="hero.text"></p>
+          <a class="hero__call" data-phone><span data-text="texts.heroCall"></span> <b data-text="phone"></b></a>
+          <ul class="hero__stats" id="hero-stats"></ul>
+        </div>
+
+        <div class="booking" id="booking">
+          <form class="booking__form" id="booking-form" novalidate>
+            <div class="booking__head">
+              <h2 class="booking__title" data-text="texts.bookingTitle"></h2>
+              <p class="booking__sub" data-text="texts.bookingSubtitle"></p>
+            </div>
+
+            <div class="field" role="radiogroup" aria-labelledby="lbl-service">
+              <p class="field__label" id="lbl-service"><span class="field__num">1</span><span data-text="texts.stepService"></span></p>
+              <div class="tabs tabs--sm" id="service-tabs"></div>
+              <div class="options" id="service-options"></div>
+            </div>
+
+            <div class="field" role="radiogroup" aria-labelledby="lbl-day">
+              <p class="field__label" id="lbl-day"><span class="field__num">2</span><span data-text="texts.stepDay"></span></p>
+              <div class="days" id="day-options"></div>
+            </div>
+
+            <div class="field" role="radiogroup" aria-labelledby="lbl-time">
+              <p class="field__label" id="lbl-time"><span class="field__num">3</span><span data-text="texts.stepTime"></span></p>
+              <div class="slots" id="slot-options"></div>
+            </div>
+
+            <div class="field">
+              <p class="field__label"><span class="field__num">4</span><span data-text="texts.stepContacts"></span></p>
+              <div class="inputs">
+                <input class="input" name="name" type="text" placeholder="Имя" autocomplete="given-name" aria-label="Имя">
+                <input class="input" name="phone" type="tel" inputmode="tel" placeholder="+7 (___) ___-__-__" autocomplete="tel" aria-label="Телефон">
+              </div>
+            </div>
+
+            <p class="booking__summary" id="booking-summary" aria-live="polite"></p>
+            <p class="booking__error" id="booking-error" role="alert" hidden></p>
+            <button class="btn btn--primary btn--block" type="submit" id="booking-submit" disabled>
+              <span data-text="texts.bookingButton"></span><span data-icon="arrow"></span>
+            </button>
+            <p class="booking__note" id="booking-note"></p>
+          </form>
+
+          <div class="booking__done" id="booking-done" hidden>
+            <div class="done__icon" data-icon="check"></div>
+            <h2 class="done__title" data-text="texts.doneTitle"></h2>
+            <dl class="done__details" id="done-details"></dl>
+            <p class="done__text" data-text="booking.successText"></p>
+            <button class="btn btn--ghost" type="button" id="booking-again" data-text="texts.doneAgain"></button>
+          </div>
+
+          <!-- показывается вместо формы, когда booking.enabled = false или нет услуг -->
+          <div class="booking__contact" id="booking-contact" hidden>
+            <h2 class="booking__title" data-text="texts.contactCardTitle"></h2>
+            <p class="booking__sub" data-text="texts.contactCardText"></p>
+            <div class="booking__contact-list" id="booking-contact-list"></div>
+            <a class="btn btn--primary btn--block" data-phone><span data-icon="phone"></span><span data-text="texts.callButton"></span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <p class="eyebrow" data-text="texts.servicesEyebrow"></p>
+            <h2 class="section__title" data-text="texts.servicesTitle"></h2>
+          </div>
+          <p class="section__lead" data-text="texts.servicesLead"></p>
+        </div>
+        <div class="tabs" id="services-tabs"></div>
+        <div class="pricelist" id="services-list"></div>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="why">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <p class="eyebrow" data-text="texts.whyEyebrow"></p>
+            <h2 class="section__title" data-text="texts.whyTitle"></h2>
+          </div>
+        </div>
+        <div class="why" id="why-list"></div>
+      </div>
+    </section>
+
+    <section class="section" id="steps">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <p class="eyebrow" data-text="texts.stepsEyebrow"></p>
+            <h2 class="section__title" data-text="texts.stepsTitle"></h2>
+          </div>
+          <a class="btn btn--primary" href="#booking"><span data-text="texts.ctaButton"></span> <span data-icon="arrow"></span></a>
+        </div>
+        <ol class="steps" id="steps-list"></ol>
+      </div>
+    </section>
+
+    <section class="section section--works" id="works">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <p class="eyebrow" data-text="texts.worksEyebrow"></p>
+            <h2 class="section__title" data-text="texts.worksTitle"></h2>
+          </div>
+          <p class="section__lead" data-text="texts.worksLead"></p>
+        </div>
+      </div>
+      <div class="works">
+        <div class="works__track" id="works-track"></div>
+      </div>
+    </section>
+
+    <section class="section" id="reviews">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <p class="eyebrow" data-text="texts.reviewsEyebrow"></p>
+            <h2 class="section__title" data-text="texts.reviewsTitle"></h2>
+          </div>
+          <p class="section__lead" data-text="texts.reviewsLead"></p>
+        </div>
+        <div class="reviews" id="reviews-list"></div>
+      </div>
+    </section>
+
+    <section class="section" id="contacts">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <p class="eyebrow" data-text="texts.contactsEyebrow"></p>
+            <h2 class="section__title" data-text="texts.contactsTitle"></h2>
+          </div>
+        </div>
+        <div class="contacts">
+          <div class="contacts__info" id="contacts-list"></div>
+          <div class="contacts__cta">
+            <div>
+              <h3 class="contacts__cta-title" data-text="texts.ctaTitle"></h3>
+              <p class="contacts__cta-text" data-text="texts.ctaText"></p>
+            </div>
+            <div class="contacts__cta-actions">
+              <a class="btn btn--primary" href="#booking"><span data-text="texts.ctaButton"></span> <span data-icon="arrow"></span></a>
+              <div class="socials" id="socials"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="logo__name logo__name--sm" data-text="name"></span>
+      <span id="copyright"></span>
+      <a class="footer__link" id="privacy-link" hidden data-text="texts.privacyLabel"></a>
+    </div>
+  </footer>
+</body>
+</html>
